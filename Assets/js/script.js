@@ -1,6 +1,9 @@
-document.ready(function() {
+$(".saveBtn").on("click", function () {
+  var value = $(this).siblings(".task").val();
+  var time = $(this).parent().attr("id");
 
-$(".saveBtn").on("click",  function(){
+  localStorage.setItem(time, value);
+});
 
 function time() {
     var currentTime = moment().format("MMM Do, YYYY hh:mm:ss A");
@@ -9,28 +12,6 @@ function time() {
 
     setInterval(time,1000);
 
-    
-
-var value = $(this).siblings(".task").val();
-var time = $(this).parent().attr("id")
-
-    localStorage.setItem(time, value)
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-});
-
 $("hour-9 .task").val(localStorage.getItem("hour-9"));
+
+
