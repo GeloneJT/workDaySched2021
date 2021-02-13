@@ -1,5 +1,7 @@
-$(document).ready(function(){
-// Saves data to local storage
+// Loads page DOM before launching JavaScript
+$(document).ready(function () {
+
+  // Saves data to local storage
   $(".saveBtn").on("click", function () {
     var value = $(this).siblings(".task").val();
     var time = $(this).parent().attr("id");
@@ -7,6 +9,7 @@ $(document).ready(function(){
     localStorage.setItem(time, value);
   });
 
+  // Persists text on refreshed page with LocalStorage data
   $("#hour-9 .task").val(localStorage.getItem("hour-9"));
   $("#hour-10 .task").val(localStorage.getItem("hour-10"));
   $("#hour-11 .task").val(localStorage.getItem("hour-11"));
@@ -17,11 +20,12 @@ $(document).ready(function(){
   $("#hour-16 .task").val(localStorage.getItem("hour16"));
   $("#hour-17 .task").val(localStorage.getItem("hour-17"));
 
-
   // Adds current date and time to header
-  var currentTime = moment().format("MMM Do, YYYY hh:mm:ss A");
+  var currentTime = moment().format("MMM Do, YYYY hh:mm A");
   $("#time-display").text(currentTime);
   console.log(currentTime);
+
+    
 
   var sunPost = moment().hours();
   console.log(sunPost);
@@ -31,31 +35,31 @@ $(document).ready(function(){
 
   //Assess time passed vs time current vs time imminent to color code in grey(past), red(current), and green(future) respectively
   function TasksToDo() {
-      if (atm > 9) {
-        $("#task9").addClass("past");
-      } else if (atm >= 9 && atm < 10) {
-        $("#task9").addClass("present");
-      } else if (atm < 9) {
-        $("#task9").addClass("future");
-        console.log(atm);
-      }
+    if (atm > 9) {
+      $("#task9").addClass("past");
+    } else if (atm >= 9 && atm < 10) {
+      $("#task9").addClass("present");
+    } else if (atm < 9) {
+      $("#task9").addClass("future");
+      console.log(atm);
+    }
 
-      if (atm > 10) {
-        $("#task10").addClass("past");
-      } else if (atm >= 10 && atm < 11) {
-        $("#task10").addClass("present");
-      } else if (atm < 10) {
-        $("#task10").addClass("future");
-      }
+    if (atm > 10) {
+      $("#task10").addClass("past");
+    } else if (atm >= 10 && atm < 11) {
+      $("#task10").addClass("present");
+    } else if (atm < 10) {
+      $("#task10").addClass("future");
+    }
 
-      if (atm > 11) {
-        $("#ask11").addClass("past");
-      } else if (atm >= 11 && atm < 12) {
-        $("#task11").addClass("present");
-      } else if (atm < 11) {
-        $("#task11").addClass("future");
-      }
-    
+    if (atm > 11) {
+      $("#ask11").addClass("past");
+    } else if (atm >= 11 && atm < 12) {
+      $("#task11").addClass("present");
+    } else if (atm < 11) {
+      $("#task11").addClass("future");
+    }
+
     if (atm > 12) {
       $("#task12").addClass("past");
     } else if (atm >= 12 && atm < 13) {
@@ -106,5 +110,4 @@ $(document).ready(function(){
   }
 
   TasksToDo();
-
 });
