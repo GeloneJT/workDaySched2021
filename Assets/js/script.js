@@ -5,85 +5,88 @@ $(".saveBtn").on("click", function () {
 
   localStorage.setItem(time, value);
 });
+
+$("hour-9 .task").val(localStorage.getItem("hour-9"));
+
+
 // Adds current date and time to header
 var currentTime = moment().format("MMM Do, YYYY hh:mm A");
 $("#time-display").text(currentTime);
-
-$("hour-9 .task").val(localStorage.getItem("hour-9"));
 
 var atm = new Date().getHours();
 console.log(atm);
 
 //Assess time passed vs time current vs time imminent to color code in grey(past), red(current), and green(future) respectively
 function TasksToDo() {
-  if (atm > 9) {
+    if (atm > 9) {
+      $("task9").addClass("past");
+    } else if (atm >= 9 && atm < 10) {
+      $("task9").addClass("present");
+    } else if (atm < 9) {
+      $("task9").addClass("future");
+    }
+
+    if (atm > 10) {
+      $("task9").addClass("past");
+    } else if (atm >= 10 && atm < 11) {
+      $("task9").addClass("present");
+    } else if (atm < 10) {
+      $("task9").addClass("future");
+    }
+
+    if (atm > 11) {
+      $("task9").addClass("past");
+    } else if (atm >= 11 && atm < 12) {
+      $("task9").addClass("present");
+    } else if (atm < 11) {
+      $("task9").addClass("future");
+    }
+  
+  if (atm > 12) {
     $("task9").addClass("past");
-  } else if (atm >= 9 && atm < 10) {
-    $("task9").addClass("presemt");
-  } else if (atm < 9) {
+  } else if (atm >= 12 && atm < 13) {
+    $("task9").addClass("present");
+  } else if (atm < 12) {
     $("task9").addClass("future");
   }
 
-  if (atm > 9) {
+  if (atm > 13) {
     $("task9").addClass("past");
-  } else if (atm >= 9 && atm < 10) {
-    $("task9").addClass("presemt");
-  } else if (atm < 9) {
+  } else if (atm >= 13 && atm < 14) {
+    $("task9").addClass("present");
+  } else if (atm < 13) {
     $("task9").addClass("future");
   }
 
-  if (atm > 9) {
+  if (atm > 14) {
     $("task9").addClass("past");
-  } else if (atm >= 9 && atm < 10) {
-    $("task9").addClass("presemt");
-  } else if (atm < 9) {
+  } else if (atm >= 14 && atm < 15) {
+    $("task9").addClass("present");
+  } else if (atm < 14) {
     $("task9").addClass("future");
   }
-}
-if (atm > 9) {
-  $("task9").addClass("past");
-} else if (atm >= 9 && atm < 10) {
-  $("task9").addClass("presemt");
-} else if (atm < 9) {
-  $("task9").addClass("future");
-}
 
-if (atm > 9) {
-  $("task9").addClass("past");
-} else if (atm >= 9 && atm < 10) {
-  $("task9").addClass("presemt");
-} else if (atm < 9) {
-  $("task9").addClass("future");
-}
+  if (atm > 15) {
+    $("task9").addClass("past");
+  } else if (atm >= 15 && atm < 16) {
+    $("task9").addClass("present");
+  } else if (atm < 15) {
+    $("task9").addClass("future");
+  }
 
-if (atm > 9) {
-  $("task9").addClass("past");
-} else if (atm >= 9 && atm < 10) {
-  $("task9").addClass("presemt");
-} else if (atm < 9) {
-  $("task9").addClass("future");
-}
+  if (atm > 16) {
+    $("task9").addClass("past");
+  } else if (atm >= 16 && atm < 17) {
+    $("task9").addClass("present");
+  } else if (atm < 16) {
+    $("task9").addClass("future");
+  }
 
-if (atm > 9) {
-  $("task9").addClass("past");
-} else if (atm >= 9 && atm < 10) {
-  $("task9").addClass("presemt");
-} else if (atm < 9) {
-  $("task9").addClass("future");
-}
-
-if (atm > 9) {
-  $("task9").addClass("past");
-} else if (atm >= 9 && atm < 10) {
-  $("task9").addClass("presemt");
-} else if (atm < 9) {
-  $("task9").addClass("future");
-}
-
-if (atm > 9) {
-  $("task9").addClass("past");
-} else if (atm >= 9 && atm < 10) {
-  $("task9").addClass("presemt");
-} else if (atm < 9) {
-  $("task9").addClass("future");
-}
+  if (atm > 17) {
+    $("task9").addClass("past");
+  } else if (atm >= 17 && atm < 18) {
+    $("task9").addClass("present");
+  } else if (atm < 17) {
+    $("task9").addClass("future");
+  }
+};
